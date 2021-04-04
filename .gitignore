@@ -133,3 +133,5 @@ pdfs/
 
 # local development workspace
 .vscode
+.DS_Store
+.data_modeling_venv
