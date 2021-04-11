@@ -31,6 +31,14 @@ def drop_tables(cur, conn):
     """
     Drops each table using the queries in `drop_table_queries` list.
     """
+    
+    print("In drop_tables() before deleting...")
+    cur.execute("""SELECT table_name FROM information_schema.tables
+       WHERE table_schema = 'public'""")
+    for table in cur.fetchall():
+        print(table)
+        print(cur.fetchall())
+    
     for query in drop_table_queries:
         cur.execute(query)
         conn.commit()
@@ -43,6 +51,14 @@ def create_tables(cur, conn):
     for query in create_table_queries:
         cur.execute(query)
         conn.commit()
+        
+    print("In create_tables()...")
+    cur.execute("""SELECT table_name FROM information_schema.tables
+       WHERE table_schema = 'public'""")
+    for table in cur.fetchall():
+        print(table)
+        print(cur.fetchall())
+    
 
 
 def main():

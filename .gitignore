@@ -130,6 +130,7 @@ dmypy.json
 
 # additional not covered - from root
 pdfs/
+personal-project-notes.md
 
 # local development workspace
 .vscode
